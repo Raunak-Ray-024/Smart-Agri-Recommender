@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 from typing import List
 
@@ -23,9 +24,12 @@ app = FastAPI(
 )
 
 # Allow the React dev server (Vite runs on port 5173) to call this API.
+# Allowed frontend addresses. Set ALLOWED_ORIGINS on the server (comma-separated).
+origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=[origin.strip() for origin in origins.split(",") if origin.strip()],
     allow_methods=["*"],
     allow_headers=["*"],
 )

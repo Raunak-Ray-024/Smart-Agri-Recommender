@@ -1,5 +1,10 @@
 # AgriSmart: AI-Powered Smart Agriculture Product Recommendation System
 
+**Live demo:** https://smart-agri-recommender.vercel.app
+**API docs:** https://smart-agri-recommender.onrender.com/docs
+
+> The free backend sleeps when idle, so the first request after a break can take up to a minute.
+
 A beginner-friendly full-stack project built for an AI/ML + UI/UX Intern machine test. A farmer selects a **crop**, a **growth stage** and an **agricultural problem**. The system recommends the **top 3 matching products** and explains why each one matches.
 
 > **Important:** The product data is a small **illustrative sample** made of generic product types. It is not a verified product catalog, and the recommendations are not agronomic advice. The system never gives dosages, application rates or chemical treatment instructions. Always follow product labels and local agricultural officer advice.
